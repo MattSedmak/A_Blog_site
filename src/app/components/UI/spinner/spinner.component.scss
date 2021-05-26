@@ -1,0 +1,32 @@
+.loader {
+  width: 100px;
+  margin: 5rem auto;
+
+  div {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background-color: #333447;
+    border-radius: 100%;
+    display: inline-block;
+    animation: bouncedelay 1.4s infinite ease-in-out both;
+  }
+  .first {
+    background-color: #1e1e1e;
+    animation-delay: -0.32s;
+  }
+  .second {
+    background-color: hotpink;
+    animation-delay: -0.16s;
+  }
+}
+@keyframes bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}

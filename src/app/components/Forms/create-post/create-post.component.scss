@@ -1,0 +1,37 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+button {
+  width: 150px;
+  padding: 10px;
+  margin-top: 20px;
+
+  border: 2px solid #1e1e1e;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+label {
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+input {
+  border: 1px solid #1e1e1e;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 40%;
+
+  &::placeholder {
+    color: #1e1e1e;
+  }
+}
+
+textarea {
+  resize: vertical;
+  padding: 10px;
+  border: 1px solid #1e1e1e;
+  &::placeholder {
+    color: #1e1e1e;
+  }
+}

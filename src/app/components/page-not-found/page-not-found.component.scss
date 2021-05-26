@@ -1,0 +1,22 @@
+div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  h1 {
+    font-size: 6rem;
+    line-height: 1.2;
+  }
+  a {
+    font-size: 2rem;
+    color: #1e1e1e;
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 4px solid #1e1e1e;
+    transition: border-bottom 0.2s ease;
+    &:hover {
+      border-bottom: transparent;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <!-- <h3>Start a blog</h3> -->
+  <form #form (ngSubmit)="onSubmit(form)">
+    <!-- <label for="title">Title: </label> -->
+    <input type="text" name="title" [(ngModel)]="title" placeholder="Give your blog a name *" />
+    <button type="submit" [disabled]="!title">Create</button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<button (click)="goBack()">Back to posts</button>
+
+<div class="post-wrapper">
+  <h2>{{post?.title}}</h2>
+  <p *ngIf="error">Something went wrong, Please try again!</p>
+
+  <app-spinner *ngIf="loading"></app-spinner>
+
+  <a routerLink="/post/{{post.id}}/edit">Update post</a>
+  <button (click)="deletePost(post.id)">Delete post</button>
+  <p>{{post?.content}}</p>
+</div>
+<app-create-comment [postId]="post?.id" (addComment)=addComment($event)></app-create-comment>
+
+<app-comment *ngFor="let c of post?.comments" [comment]="c"></app-comment>

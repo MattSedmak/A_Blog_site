@@ -1,0 +1,22 @@
+<div class="wrapper">
+
+  <div class="blog-title-container">
+    <h1 *ngIf="blog?.title">{{blog.title}} </h1>
+    <app-edit-blog *ngIf="edit" [upDatedBlog]="blog" (editTitle)=updateBlog($event)></app-edit-blog>
+  </div>
+
+  <div>
+    <p *ngIf="error">{{errorMsg}}</p>
+    <button (click)="editTitle()">Edit title</button>
+    <button (click)="deleteBlog(blog.id)">Delete blog</button>
+  </div>
+
+
+  <app-spinner *ngIf="loading"></app-spinner>
+
+
+  <app-create-post [blog]="blog.id" (addPost)=addPost($event)></app-create-post>
+</div>
+<div class="posts-container">
+  <app-post *ngFor="let p of blog?.posts" [post]="p" [blogId]="blog.id"></app-post>
+</div>

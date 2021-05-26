@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Akkurat-lite;
+  src: url(assets/font/AkkLg_Pro_1.otf);
+}
+@font-face {
+  font-family: Akkurat-reg;
+  src: url(assets/font/AkkRg_Pro_1.otf);
+}
+body {
+  font-family: "Akkurat-reg", Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

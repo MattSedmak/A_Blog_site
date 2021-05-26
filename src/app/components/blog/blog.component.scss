@@ -1,0 +1,48 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  @media screen and (min-width: 600px) {
+    margin: 2em;
+  }
+  font-family: "Akkurat-reg", Helvetica, sans-serif;
+  line-height: 1.5;
+  .blog-title-container {
+    margin-bottom: 2em;
+    line-height: 1.2;
+    h1 {
+      font-size: 5rem;
+      margin-bottom: 0;
+    }
+  }
+
+  button {
+    width: 100px;
+    padding: 5px;
+    border: 2px solid #1e1e1e;
+    background-color: #1e1e1e;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: all 0.2s ease;
+    &:hover {
+      background-color: #fff;
+      color: #1e1e1e;
+      border: 2px solid #1e1e1e;
+    }
+  }
+}
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  // flex-wrap: wrap;
+  justify-content: flex-start;
+  // align-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  margin: 1rem auto;
+  width: 95%;
+  // max-width: 50rem;
+}

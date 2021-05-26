@@ -1,0 +1,41 @@
+article {
+  margin: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: baseline;
+  line-height: 1.2em;
+  .post-title,
+  .comment {
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+  sup {
+    font-size: 0.7rem;
+    font-family: "Akkurat-lite", sans-serif;
+    color: #3a3a3a;
+  }
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #3639fc;
+    transition: color 0.2s ease;
+    &:hover {
+      color: hotpink;
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  article {
+    .post-title,
+    .comment {
+      font-size: 2.5rem;
+      margin-right: 5px;
+    }
+    sup {
+      font-size: 1rem;
+    }
+    a {
+      font-size: 2rem;
+    }
+  }
+}

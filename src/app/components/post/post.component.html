@@ -1,0 +1,7 @@
+<article>
+  <h3 class="post-title">{{post.title}}<sup>{{post.created | date: "dd/M/yy"}}</sup></h3>
+
+  <p class="comment">comments<sup class="comment-count">{{post.comments.length}}</sup>.</p>
+
+  <a routerLink="post/{{post.id}}">Read &rarr;</a>
+</article>

@@ -1,0 +1,15 @@
+<h1><em>/</em> Blogs</h1>
+<app-create-blog (addBlog)=addBlog($event)></app-create-blog>
+
+<app-spinner *ngIf="loading"></app-spinner>
+<div class="blogs-menu">
+  <p *ngIf="error">{{errorStatus}} : Oh no! Something went wrong...</p>
+
+  <a *ngFor="let blog of blogs" routerLink="/blog/{{blog.id}}">
+    <p class="blog-title">
+      {{blog.title}}
+    </p>
+    <p class="blog-posts">Posts: {{blog.posts.length}}</p>
+    <p class="blog-created">{{blog.created|date}}</p>
+  </a>
+</div>

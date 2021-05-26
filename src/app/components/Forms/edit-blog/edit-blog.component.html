@@ -1,0 +1,5 @@
+<form #form (ngSubmit)="onSubmit(form)">
+  <label for="title">Blog title: </label>
+  <input type="text" name="title" [(ngModel)]="upDatedBlog.title" placeholder="What's your blog about?" />
+  <button type="submit" [disabled]="!upDatedBlog">Save</button>
+</form>

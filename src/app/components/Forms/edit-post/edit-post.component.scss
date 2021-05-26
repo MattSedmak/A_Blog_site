@@ -1,0 +1,9 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40em;
+  margin: 2em auto;
+}
+textarea {
+  resize: vertical;
+}
