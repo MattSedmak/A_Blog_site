@@ -2,10 +2,10 @@
   <h3>Create a new Post</h3>
   <form #form (ngSubmit)="onSubmit(form)">
     <!-- <label for="title">Post title: *</label> -->
-    <input type="text" id="title" name="title" maxlength="20" placeholder="Title. Max 20 characters *"
+    <input type="text" id="title" name="title" maxlength="20" placeholder="Title. Max 20 characters...*"
       [(ngModel)]="title">
     <!-- <label for="content">Content:</label> -->
-    <textarea name="content" id="content" cols="30" rows="8" placeholder="Content*" [(ngModel)]="content"></textarea>
+    <textarea name="content" id="content" cols="30" rows="3" placeholder="Content...*" [(ngModel)]="content"></textarea>
     <button type="submit" [disabled]="!title || !content">Create post</button>
   </form>
 </div>

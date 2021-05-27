@@ -1,14 +1,17 @@
 .comment-card {
   width: 90%;
   max-width: 40em;
-  background-color: rgba(234, 243, 255, 0.767);
-  // box-shadow: 0 2px 8px rgba(168, 168, 168, 0.26);
-  // border: 1px solid #f5f5f5;
-  border-radius: 10px;
+  // background-color: #1e1e1e;
+  // color: #fff;
+
+  border-bottom: 1px solid #1e1e1e;
+
   margin: 1rem auto;
-  padding: 0.5rem;
+  padding: 0.2rem;
   .comment {
+    font-family: "Akkurat-lite", sans-serif;
     padding: 0.5em;
     font-size: 0.8rem;
+    line-height: 1.6;
   }
 }

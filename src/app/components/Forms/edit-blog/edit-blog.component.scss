@@ -1,18 +1,18 @@
 input {
   padding: 5px;
-  border-radius: 10px;
+
   border: 1px solid #1e1e1e;
 }
 button {
   margin-left: 3px;
   width: 50px;
   padding: 5px;
-  border-radius: 10px;
-  border: 1px solid;
+
+  border: 1px solid #1e1e1e;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #1e1e1e;
+  color: #fff;
   &:hover {
-    background-color: #1e1e1e;
-    color: #fff;
+    opacity: 0.7;
   }
 }

@@ -12,6 +12,7 @@ import { BlogService } from 'src/app/services/blog.service';
 export class EditPostComponent implements OnInit {
   post: Post;
   postId: number;
+  loading: boolean = false;
 
   title: string = '';
   content: string = '';
@@ -27,13 +28,16 @@ export class EditPostComponent implements OnInit {
   }
 
   getPost(): void {
+    this.loading = true;
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.blogService.getPost(id).subscribe((post) => {
       this.post = post;
+      this.loading = false;
     });
   }
 
   onSubmit() {
+    this.loading = true;
     let post = new Post(
       this.post.id,
       this.post.title,
@@ -41,6 +45,7 @@ export class EditPostComponent implements OnInit {
       this.post.blogId
     );
     this.blogService.updatePost(post, this.post.id).subscribe(() => {
+      this.loading = false;
       this.router.navigate([`/blog/${this.post.blogId}/post/${this.post.id}`]);
     });
   }

@@ -14,7 +14,6 @@ export class PostDetailComponent implements OnInit {
   postId: number;
   // errorMsg: string = '';
   error: boolean = false;
-
   loading: boolean = false;
 
   constructor(
@@ -44,8 +43,10 @@ export class PostDetailComponent implements OnInit {
     );
   }
   deletePost(id: number): void {
+    this.loading = true;
     this.blogService.deletePost(id).subscribe(
       () => {
+        this.loading = false;
         this.router.navigate([`/blog/${this.post.blogId}`]);
       },
       (error) => {
@@ -63,12 +64,10 @@ export class PostDetailComponent implements OnInit {
     });
   }
   addComment(newComment: Comment) {
+    this.loading = true;
     this.blogService.addComment(newComment).subscribe((comment) => {
       this.post.comments.push(comment);
+      this.loading = false;
     });
-  }
-
-  goBack() {
-    this.router.navigate([`/blog/${this.post.blogId}`]);
   }
 }

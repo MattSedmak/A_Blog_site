@@ -1,6 +1,6 @@
 <form #form (ngSubmit)="onSubmit(form)" class="comment-wrapper">
   <label for="comment">Comment:</label>
-  <textarea name="comment" id="comment" cols="30" rows="5" placeholder="Write a comment"
-    [(ngModel)]="comment"></textarea>
-  <button type="submit">Add comment</button>
+  <textarea name="comment" id="comment" cols="30" rows="3" maxlength="250"
+    placeholder="Write a comment. Max 250 Characters..." [(ngModel)]="comment"></textarea>
+  <button type="submit" [disabled]="!comment">Add comment</button>
 </form>
