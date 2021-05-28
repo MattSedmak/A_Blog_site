@@ -16,7 +16,7 @@ export class CreateBlogComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm): void {
     let blog = new Blog(0, this.title);
     this.addBlog.emit(blog);
     form.reset();

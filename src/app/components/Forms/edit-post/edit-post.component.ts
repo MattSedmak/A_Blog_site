@@ -14,9 +14,6 @@ export class EditPostComponent implements OnInit {
   postId: number;
   loading: boolean = false;
 
-  title: string = '';
-  content: string = '';
-
   constructor(
     private blogService: BlogService,
     private route: ActivatedRoute,
@@ -36,7 +33,7 @@ export class EditPostComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.loading = true;
     let post = new Post(
       this.post.id,

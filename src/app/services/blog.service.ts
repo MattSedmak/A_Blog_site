@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { Blog } from '../models/Blog';
 import { Observable } from 'rxjs';
 import { Post } from '../models/Post';
@@ -43,11 +42,6 @@ export class BlogService {
     );
   }
 
-  // getPosts(): Observable<Post[]> {
-  //   return this.httpClient.get<Post[]>(
-  //     'https://mi-blogs.azurewebsites.net/api/Posts'
-  //   );
-  // }
   getPost(id: number): Observable<Post> {
     return this.httpClient.get<Post>(
       'https://mi-blogs.azurewebsites.net/api/Posts/' + id
@@ -72,11 +66,6 @@ export class BlogService {
     );
   }
 
-  getComments(): Observable<Comment[]> {
-    return this.httpClient.get<Comment[]>(
-      'https://mi-blogs.azurewebsites.net/api/Comments'
-    );
-  }
   addComment(comment: Comment): Observable<Comment> {
     return this.httpClient.post<Comment>(
       'https://mi-blogs.azurewebsites.net/api/Comments',

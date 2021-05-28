@@ -20,7 +20,7 @@ export class CreatePostComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm): void {
     this.blogId = this.blog;
     this.title = this.title;
     this.content = this.content;

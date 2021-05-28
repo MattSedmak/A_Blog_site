@@ -17,7 +17,7 @@ export class CreateCommentComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm): void {
     let newComment = new Comment(this.comment, this.postId);
     this.addComment.emit(newComment);
     form.reset();

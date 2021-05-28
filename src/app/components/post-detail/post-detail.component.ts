@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../../models/Post';
 import { Comment } from '../../models/Comment';
-
 import { BlogService } from '../../services/blog.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
@@ -12,7 +13,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PostDetailComponent implements OnInit {
   post: Post;
   postId: number;
-  // errorMsg: string = '';
   error: boolean = false;
   loading: boolean = false;
 
@@ -26,8 +26,8 @@ export class PostDetailComponent implements OnInit {
     this.route.paramMap.subscribe((data) => {
       this.postId = Number(data.get('id'));
     });
+
     this.getPost();
-    this.getComments();
   }
   getPost(): void {
     this.loading = true;
@@ -36,7 +36,7 @@ export class PostDetailComponent implements OnInit {
         this.post = post;
         this.loading = false;
       },
-      (error) => {
+      (error: HttpErrorResponse) => {
         this.loading = false;
         this.error = true;
       }
@@ -49,25 +49,24 @@ export class PostDetailComponent implements OnInit {
         this.loading = false;
         this.router.navigate([`/blog/${this.post.blogId}`]);
       },
-      (error) => {
+      (error: HttpErrorResponse) => {
         this.error = true;
         this.loading = false;
       }
     );
   }
-  getComments(): void {
-    let postId = this.post.id;
-    this.blogService.getComments().subscribe((data) => {
-      this.post.comments = data.filter((c) => {
-        c.id == postId;
-      });
-    });
-  }
-  addComment(newComment: Comment) {
+
+  addComment(newComment: Comment): void {
     this.loading = true;
-    this.blogService.addComment(newComment).subscribe((comment) => {
-      this.post.comments.push(comment);
-      this.loading = false;
-    });
+    this.blogService.addComment(newComment).subscribe(
+      (comment) => {
+        this.post.comments.push(comment);
+        this.loading = false;
+      },
+      (error: HttpErrorResponse) => {
+        this.error = true;
+        this.loading = false;
+      }
+    );
   }
 }

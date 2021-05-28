@@ -3,17 +3,15 @@
   <div class="title-container">
     <h2>{{post?.title}}</h2>
     <div class="buttons">
-      <a class="update-link" routerLink="/post/{{post.id}}/edit">Edit post</a>
+      <a class="update-link" routerLink="/post/{{post?.id}}/edit">Edit post</a>
       <button (click)="deletePost(post.id)">Delete post</button>
     </div>
   </div>
-
   <p class="post error" *ngIf="error">Something went wrong, Please try again!</p>
-  <p>{{post.created | date: "dd/M/yy"}}</p>
+  <p>{{post?.created | date: "dd/M/yy"}}</p>
   <p class="post-content">{{post?.content}}</p>
-  <a class="back-link" routerLink="/blog/{{post.blogId}}">&larr; Back to posts</a>
+  <a class="back-link" routerLink="/blog/{{post?.blogId}}">&larr; Back to posts</a>
 </div>
-
 
 <app-create-comment [postId]="post?.id" (addComment)=addComment($event)></app-create-comment>
 

@@ -2,14 +2,15 @@
 <div class="wrapper">
   <div class="heading-container">
     <h3>Edit Post</h3>
-    <a routerLink="/blog/{{post.blogId}}/post/{{post.id}}"> &larr; Cancel edit</a>
+    <a routerLink="/blog/{{post?.blogId}}/post/{{post?.id}}"> &larr; Cancel edit</a>
   </div>
 
   <form (ngSubmit)="onSubmit()">
     <label for="title">Post title:</label>
-    <input type="text" id="title" name="title" [(ngModel)]="post.title">
+    <input type="text" id="title" name="title" *ngIf="post?.title" [(ngModel)]="post.title">
     <label for="content">Content:</label>
-    <textarea name="content" id="content" cols="30" rows="10" [(ngModel)]="post.content"></textarea>
-    <button type="submit" [disabled]="!post.title || !post.content">Update post</button>
+    <textarea name="content" id="content" cols="30" rows="10" *ngIf="post?.content"
+      [(ngModel)]="post.content"></textarea>
+    <button type="submit" [disabled]="!post?.title || !post?.content">Update post</button>
   </form>
 </div>

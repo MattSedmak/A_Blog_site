@@ -31,7 +31,6 @@ export class BlogComponent implements OnInit {
       this.blogId = Number(data.get('id'));
     });
     this.getBlog();
-    // this.getPosts();
   }
   getBlog(): void {
     this.loading = true;
@@ -47,21 +46,7 @@ export class BlogComponent implements OnInit {
       }
     );
   }
-  // getPosts(): void {
-  //   this.loading = true;
-  //   const blogId = this.blog.id;
-  //   this.blogService.getPosts().subscribe(
-  //     (data) => {
-  //       this.blog.posts = data.filter((p) => p.id == blogId);
-  //       this.loading = false;
-  //     },
-  //     (error: HttpErrorResponse) => {
-  //       this.error = true;
-  //       this.loading = false;
-  //       console.log(error.message);
-  //     }
-  //   );
-  // }
+
   addPost(newPost: Post): void {
     this.loading = true;
     this.blogService.addPost(newPost).subscribe(
@@ -98,7 +83,4 @@ export class BlogComponent implements OnInit {
   editTitle(): void {
     this.edit = !this.edit;
   }
-  // goBack(): void {
-  //   this.router.navigate([`/blogs`]);
-  // }
 }

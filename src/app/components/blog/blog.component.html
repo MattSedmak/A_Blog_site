@@ -15,7 +15,7 @@
   <app-spinner *ngIf="loading"></app-spinner>
 
 
-  <app-create-post [blog]="blog.id" (addPost)=addPost($event)></app-create-post>
+  <app-create-post [blog]="blog?.id" (addPost)=addPost($event)></app-create-post>
 </div>
 <div class="posts-container">
   <app-post *ngFor="let p of blog?.posts" [post]="p" [blogId]="blog.id"></app-post>

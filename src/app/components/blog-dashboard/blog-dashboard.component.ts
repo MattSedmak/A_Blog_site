@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../../services/blog.service';
 import { Blog } from '../../models/Blog';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blog-dashboard',
