@@ -13,7 +13,11 @@ export class EditBlogComponent implements OnInit {
 
   ngOnInit(): void {}
   onSubmit(form): void {
-    let blog = new Blog(this.upDatedBlog.id, this.upDatedBlog.title);
+    let blog = new Blog(
+      this.upDatedBlog.id,
+      this.upDatedBlog.title,
+      this.upDatedBlog.created
+    );
     this.editTitle.emit(blog);
     form.reset();
   }

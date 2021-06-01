@@ -39,7 +39,8 @@ export class EditPostComponent implements OnInit {
       this.post.id,
       this.post.title,
       this.post.content,
-      this.post.blogId
+      this.post.blogId,
+      this.post.created
     );
     this.blogService.updatePost(post, this.post.id).subscribe(() => {
       this.loading = false;

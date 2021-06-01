@@ -6,15 +6,21 @@ export class Post {
   id: number;
   title: string;
   content: string;
-  created: string;
+  created: Date;
   modified: string;
   blogId: number;
   comments: Comment[];
-  constructor(id: number, title: string, content: string, blogId: number) {
+  constructor(
+    id: number,
+    title: string,
+    content: string,
+    blogId: number,
+    created: Date
+  ) {
     this.id = id;
     this.title = title;
     this.content = content;
-    this.created = mydate.toISOString();
+    this.created = created;
     this.modified = mydate.toISOString();
     this.blogId = blogId;
     this.comments = [];

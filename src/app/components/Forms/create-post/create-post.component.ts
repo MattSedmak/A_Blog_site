@@ -24,7 +24,7 @@ export class CreatePostComponent implements OnInit {
     this.blogId = this.blog;
     this.title = this.title;
     this.content = this.content;
-    let post = new Post(0, this.title, this.content, this.blogId);
+    let post = new Post(0, this.title, this.content, this.blogId, new Date());
     this.addPost.emit(post);
     form.reset();
   }
