@@ -29,7 +29,6 @@ export class BlogService {
     );
   }
   updateBlog(blog: Blog, id: number): Observable<Blog> {
-    console.log(blog);
     return this.httpClient.put<Blog>(
       'https://mi-blogs.azurewebsites.net/api/Blogs/' + id,
       blog

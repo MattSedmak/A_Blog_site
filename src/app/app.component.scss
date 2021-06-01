@@ -5,16 +5,13 @@ header {
   align-items: center;
   width: 95%;
   margin: 0.5rem auto;
-  // padding: 0 0.5rem;
   h4 {
     font-size: 1rem;
   }
   a {
     font-size: 1rem;
-    // font-family: "Akkurat-lite", sans-serif;
     text-decoration: none;
     color: #1e1e1e;
-
     padding: 5px;
     transition: all 0.2s ease;
     &:hover {

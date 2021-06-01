@@ -1,5 +1,4 @@
 import { Comment } from './Comment';
-import { Blog } from './Blog';
 
 const mydate = new Date();
 
