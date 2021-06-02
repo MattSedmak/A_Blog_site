@@ -9,9 +9,21 @@ export class MockBlogService {
   constructor() {}
 
   testdata: Blog[] = [
-    { id: 1, title: 'test blog', created: '', userId: 999, posts: [] },
-    { id: 2, title: 'test blog 2', created: '', userId: 999, posts: [] },
-    { id: 3, title: 'test blog 3', created: '', userId: 999, posts: [] },
+    { id: 1, title: 'test blog', created: new Date(), userId: 999, posts: [] },
+    {
+      id: 2,
+      title: 'test blog 2',
+      created: new Date(),
+      userId: 999,
+      posts: [],
+    },
+    {
+      id: 3,
+      title: 'test blog 3',
+      created: new Date(),
+      userId: 999,
+      posts: [],
+    },
   ];
 
   getBlogs(): Observable<Blog[]> {
