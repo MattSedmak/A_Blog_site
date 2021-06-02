@@ -1,6 +1,6 @@
 <div class="wrapper">
   <form #form (ngSubmit)="onSubmit(form)">
-    <input type="text" name="title" [(ngModel)]="title" maxlength="20" placeholder="Give your blog a name *" />
+    <input type="text" name="title" [(ngModel)]="title" maxlength="20" placeholder="Give your blog a name *" required />
     <button type="submit" [disabled]="!title">Create</button>
   </form>
 </div>
